@@ -1,36 +1,47 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weekly Meal Planner</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Meal Planner</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Weekly Meal Planner</h1>
-    <p>Generate a weekly meal calendar and shopping list.</p>
-    <button id="addMealBtn">Add New Meal</button>
-  </header>
-  <main>
-    <section class="calendar-section">
-      <h2>This Week's Meals</h2>
-      <div id="mealCalendar" class="calendar-grid"></div>
-    </section>
-    <section class="shopping-section">
+  <h1>Weekly Meal Planner</h1>
+  <button id="generateBtn">Generate Weekly Meals</button>
+  <button id="addMealBtn">Add New Meal</button>
+
+  <div class="container">
+    <div class="card">
+      <h2>Meal Plan</h2>
+      <div id="mealList"></div>
+    </div>
+
+    <div class="card">
       <h2>Shopping List</h2>
       <ul id="shoppingList"></ul>
-    </section>
-  </main>
-  <div id="mealModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Add New Meal</h2>
-      <input type="text" id="mealName" placeholder="Meal Name" />
-      <textarea id="mealIngredients" placeholder="Ingredients (comma separated)"></textarea>
-      <button id="saveMealBtn">Save Meal</button>
     </div>
   </div>
+
+  <!-- Add Meal Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add a Meal</h2>
+      <label>Meal Name</label>
+      <input id="mealNameInput" type="text" />
+
+      <h3>Ingredients</h3>
+      <div id="ingredientsContainer"></div>
+      <button id="addIngredientBtn">Add Ingredient</button>
+
+      <div class="modal-actions">
+        <button id="saveMealBtn">Save Meal</button>
+        <button id="closeModalBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
