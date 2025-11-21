@@ -1,0 +1,3 @@
+const Airtable=require('airtable');const base=new Airtable({apiKey:process.env.patgspUQQUefRrndu.dc9de7a249fa6e76b76e0cb3cb220e8298e11fab8566d98cb06b00acf5fe98b8}).base(process.env.appwnwruZy7ElrUdR.);
+exports.handler=async function(event){try{const{id}=JSON.parse(event.body);await base('Meals').destroy([id]);
+return{statusCode:200,body:JSON.stringify({deleted:id})};}catch(err){return{statusCode:500,body:err.toString()};}};
